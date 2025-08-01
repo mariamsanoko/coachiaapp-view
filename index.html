@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>CoachIAApp – Code source App.js</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CoachIAApp – Fichier App.js</h1>
+  <pre><code id="code"></code></pre>
+
+  <script src="app.js"></script>
+  <script>
+    // Afficher le contenu de app.js en tant que texte brut
+    fetch('app.js')
+      .then(res => res.text())
+      .then(text => {
+        document.getElementById('code').textContent = text;
+      });
+  </script>
+</body>
+</html>
