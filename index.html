@@ -1,22 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>CoachIAApp – Code source App.js</title>
-  <link rel="stylesheet" href="style.css">
+  <title>CoachIAApp – App.js</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+    h1 {
+      color: #61dafb;
+      font-size: 2rem;
+    }
+    pre {
+      overflow-x: auto;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
   <h1>CoachIAApp – Fichier App.js</h1>
-  <pre><code id="code"></code></pre>
+  <pre><code id="code" class="language-js"></code></pre>
 
-  <script src="app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+
   <script>
-    // Afficher le contenu de app.js en tant que texte brut
     fetch('app.js')
       .then(res => res.text())
       .then(text => {
-        document.getElementById('code').textContent = text;
+        const codeEl = document.getElementById('code');
+        codeEl.textContent = text;
+        Prism.highlightElement(codeEl);
       });
   </script>
 </body>
