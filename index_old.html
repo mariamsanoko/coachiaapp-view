@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoachIAApp – Aperçu du code</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #f1f1f1;
+      padding: 2rem;
+      margin: 0;
+    }
+    h1 {
+      color: #61dafb;
+      font-size: 2rem;
+    }
+    .buttons {
+      margin: 1rem 0;
+    }
+    .buttons a {
+      display: inline-block;
+      margin-right: 1rem;
+      background-color: #61dafb;
+      color: #121212;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    pre {
+      overflow-x: auto;
+      border-radius: 8px;
+      background-color: #2d2d2d;
+      padding: 1rem;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>CoachIAApp – Fichier App.js</h1>
+
+  <div class="buttons">
+    <a href="app.js" download>Télécharger App.js</a>
+    <a href="https://expo.dev/@mariamsanoko/coachiaapp" target="_blank">Voir la démo sur Expo</a>
+  </div>
+
+  <pre><code id="code" class="language-js"></code></pre>
+
+  <footer>
+    © 2025 Mariam Sanoko – CoachIAApp | Propulsé par GitHub Pages ✨
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script>
+    fetch('app.js')
+      .then(res => res.text())
+      .then(text => {
+        const codeEl = document.getElementById('code');
+        codeEl.textContent = text;
+        Prism.highlightElement(codeEl);
+      });
+  </script>
+</body>
+</html>
