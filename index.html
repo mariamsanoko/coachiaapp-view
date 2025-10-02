@@ -1,29 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CoachIAApp - code source App.js</title>
-  <link rel="stylesheet" href="style.css">
+  <title>CoachIAApp – App.js</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+    h1 {
+      color: #61dafb;
+      font-size: 2rem;
+    }
+    pre {
+      overflow-x: auto;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-  <div class="app-container">
-    <h1>Hello Expo.</h1>
-    <p>Bienvenue dans la version de démonstration web de CoachIAApp.</p>
-    <a href="https://www.msprods.fr" target="_blank">Retour vers msprods.fr</a>
-  </div>
-<script src="App.js"></script>
-<script>
-  fetch('App.js')
-    .then(response => response.text())
-    .then(data => {
-      const pre = document.createElement('pre');
-      pre.textContent = data;
-      document.body.appendChild(pre);
-    })
-    .catch(error => console.error('Error loading App.js:', error));
-</script>
- 
+  <h1>CoachIAApp – Fichier App.js</h1>
+  <pre><code id="code" class="language-js"></code></pre>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+
+  <script>
+    fetch('app.js')
+      .then(res => res.text())
+      .then(text => {
+        const codeEl = document.getElementById('code');
+        codeEl.textContent = text;
+        Prism.highlightElement(codeEl);
+      });
+  </script>
 </body>
 </html>
