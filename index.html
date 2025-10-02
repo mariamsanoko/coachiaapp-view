@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CoachIAApp - Aperçu</title>
+  <title>CoachIAApp - code source App.js</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +13,17 @@
     <p>Bienvenue dans la version de démonstration web de CoachIAApp.</p>
     <a href="https://www.msprods.fr" target="_blank">Retour vers msprods.fr</a>
   </div>
-
+<script src="App.js"></script>
+<script>
+  fetch('App.js')
+    .then(response => response.text())
+    .then(data => {
+      const pre = document.createElement('pre');
+      pre.textContent = data;
+      document.body.appendChild(pre);
+    })
+    .catch(error => console.error('Error loading App.js:', error));
+</script>
  
 </body>
 </html>
