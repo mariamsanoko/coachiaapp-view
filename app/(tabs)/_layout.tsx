@@ -5,6 +5,8 @@ import { HapticTab } from '@/components/haptic-tab';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -27,7 +29,14 @@ export default function TabLayout() {
         name="explore"
         options={{
           title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <MaterialIcons name="explore" size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="login"
+        options={{
+          title: 'Login',
+          tabBarIcon: ({ color }) => <SimpleLineIcons name="login" size={24} color={color} />,
         }}
       />
     </Tabs>
